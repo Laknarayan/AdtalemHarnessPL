@@ -5,15 +5,15 @@ pipeline:
   orgIdentifier: default_org
   tags: {}
   variables:
-    - name: '0'
+    - name: ARTIFACT_NAME
+      value: backend-artifact-cu
       type: String
-      value: '[object Object]'
-    - name: '1'
+    - name: AZURE_WEBAPP_NAME
+      value: genai-cu-dev-webapp
       type: String
-      value: '[object Object]'
-    - name: '2'
-      type: String
-      value: '[object Object]'
+    - name: PYTHON_VERSION
+      value: '3.9'
+      type: Number
   stages:
     - stage:
         name: Build
