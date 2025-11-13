@@ -1,0 +1,7 @@
+
+pipeline:
+  name: TestPipeline
+  identifier: TestPipeline
+  projectIdentifier: default_project
+  orgIdentifier: default_org
+  stages: []
