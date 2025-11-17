@@ -1,6 +1,6 @@
 template:
   name: MigratedPipeline
-  identifier: MigratedPipeline
+  identifier: MigratedPipeline_1
   versionLabel: v1.0
   type: stepGroup
   projectIdentifier: NodeJs
