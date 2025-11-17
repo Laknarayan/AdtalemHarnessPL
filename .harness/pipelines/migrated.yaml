@@ -1,10 +1,10 @@
 template:
   name: MigratedPipeline
   identifier: MigratedPipeline
-  versionLabel: ''
+  versionLabel: v1.0
   type: stepGroup
-  projectIdentifier: default_project
-  orgIdentifier: default_org
+  projectIdentifier: NodeJs
+  orgIdentifier: default
   tags: {}
   spec:
     stageType: CI
