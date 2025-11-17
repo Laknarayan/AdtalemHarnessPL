@@ -1,8 +1,8 @@
 pipeline:
   name: dev_backend___date_yyyymmdd___rev__r_
   identifier: dev_backend___date_yyyymmdd___rev__r_
-  projectIdentifier: default_project
-  orgIdentifier: default_org
+  projectIdentifier: NodeJs
+  orgIdentifier: default
   tags: {}
   variables:
     - name: ARTIFACT_NAME
