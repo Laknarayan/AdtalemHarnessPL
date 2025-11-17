@@ -1,0 +1,131 @@
+template:
+  name: MigratedPipeline
+  identifier: MigratedPipeline
+  versionLabel: ''
+  type: stepGroup
+  projectIdentifier: default_project
+  orgIdentifier: default_org
+  tags: {}
+  spec:
+    stageType: CI
+    steps:
+      - step:
+          type: Run
+          name: Install Node.js
+          identifier: Install_Node_js
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Install dependencies
+          identifier: Install_dependencies
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Replace tokens in environment.ts
+          identifier: Replace_tokens_in_environment_ts
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Replace tokens in assests-path.ts
+          identifier: Replace_tokens_in_assests_path_ts
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: 'Replace tokens in download-constants.ts '
+          identifier: Replace_tokens_in_download_constants_ts_
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Replace tokens in _variables.scss
+          identifier: Replace_tokens_in__variables_scss
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: 'Replace tokens in index.html '
+          identifier: Replace_tokens_in_index_html_
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: 'Replace tokens in global-constants.ts '
+          identifier: Replace_tokens_in_global_constants_ts_
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Build Application
+          identifier: Build_Application
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Copy dist folder and contents
+          identifier: Copy_dist_folder_and_contents
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Copy firebase.json
+          identifier: Copy_firebase_json
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Copy WEB deploy Script
+          identifier: Copy_WEB_deploy_Script
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Publish $(ENV) artifact
+          identifier: Publish___ENV__artifact
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Copy dist folder and contents_1
+          identifier: Copy_dist_folder_and_contents_2
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Publish $(ENV) artifact_1
+          identifier: Publish___ENV__artifact_2
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
