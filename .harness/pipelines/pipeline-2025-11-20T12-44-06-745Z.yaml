@@ -1,0 +1,93 @@
+template:
+  name: >-
+    <+pipeline.properties.ci.codebase.build.spec.branch>_$(date:yyyyMMdd)$(rev:.r)
+  identifier: >-
+    <+pipeline.properties.ci.codebase.build.spec.branch>_$(date:yyyyMMdd)$(rev:.r)
+  versionLabel: ''
+  type: stepGroup
+  projectIdentifier: default_project
+  orgIdentifier: default_org
+  tags: {}
+  spec:
+    stageType: CI
+    steps:
+      - step:
+          type: Run
+          name: Download parent pom xml
+          identifier: Download_parent_pom_xml
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: mule-custom-logger-1.3.7
+          identifier: mule_custom_logger_1_3_7
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Download adtalem-error-handler-1.1.0 jar
+          identifier: Download_adtalem_error_handler_1_1_0_jar
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: mule-custom-logger-1.3.7.pom
+          identifier: mule_custom_logger_1_3_7_pom
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Download adtalem-error-handler-pom
+          identifier: Download_adtalem_error_handler_pom
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Apache-Maven-Plugin-3.9.11
+          identifier: Apache_Maven_Plugin_3_9_11
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: BuildScript
+          identifier: BuildScript
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Maven build
+          identifier: Maven_build
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: 'Copy Files to: <+pipeline.workspace>'
+          identifier: Copy_Files_to____pipeline_workspace_
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: 'Publish Artifact: drop'
+          identifier: Publish_Artifact__drop
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
