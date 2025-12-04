@@ -1,0 +1,145 @@
+pipeline:
+  name: pcor_function___pipeline_properties_ci_codebase_build_spec_bran
+  identifier: pcor_function___pipeline_properties_ci_codebase_build_spec_bran
+  projectIdentifier: NodeJs
+  orgIdentifier: default
+  tags: {}
+  variables:
+    - value: ''
+      type: String
+  stages:
+    - stage:
+        name: SEMANTIC_VERSIONING
+        identifier: SEMANTIC_VERSIONING
+        type: CI
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: Step
+                  identifier: Step
+                  type: Run
+                  spec:
+                    command: '#Manually add a command'
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+    - stage:
+        name: pcor_fuctions_Build
+        identifier: pcor_fuctions_Build
+        type: CI
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: Install Node JS
+                  identifier: Install_Node_JS
+                  type: Run
+                  spec:
+                    command: '#Manually add a command'
+                when:
+                  stageStatus: ''
+                  condition: ''
+              - step:
+                  name: Install Dependencies
+                  identifier: Install_Dependencies
+                  type: Run
+                  spec:
+                    command: '#Manually add a command'
+                when:
+                  stageStatus: ''
+                  condition: ''
+              - step:
+                  name: Build Application
+                  identifier: Build_Application
+                  type: Run
+                  spec:
+                    command: run build
+                when:
+                  stageStatus: ''
+                  condition: ''
+              - step:
+                  name: Copy dist/pcor_functions folder
+                  identifier: Copy_dist_pcor_functions_folder
+                  type: Run
+                  spec:
+                    command: '#Manually add a command'
+                when:
+                  stageStatus: ''
+                  condition: ''
+              - step:
+                  name: Copy package.json
+                  identifier: Copy_package_json
+                  type: Run
+                  spec:
+                    command: '#Manually add a command'
+                when:
+                  stageStatus: ''
+                  condition: ''
+              - step:
+                  name: Copy tsconfig.build.json
+                  identifier: Copy_tsconfig_build_json
+                  type: Run
+                  spec:
+                    command: '#Manually add a command'
+                when:
+                  stageStatus: ''
+                  condition: ''
+              - step:
+                  name: Copy tsconfig.json
+                  identifier: Copy_tsconfig_json
+                  type: Run
+                  spec:
+                    command: '#Manually add a command'
+                when:
+                  stageStatus: ''
+                  condition: ''
+              - step:
+                  name: Copy firebase.json
+                  identifier: Copy_firebase_json
+                  type: Run
+                  spec:
+                    command: '#Manually add a command'
+                when:
+                  stageStatus: ''
+                  condition: ''
+              - step:
+                  name: Copy firebase
+                  identifier: Copy_firebase
+                  type: Run
+                  spec:
+                    command: '#Manually add a command'
+                when:
+                  stageStatus: ''
+                  condition: ''
+              - step:
+                  name: copy data folder to target
+                  identifier: copy_data_folder_to_target
+                  type: Run
+                  spec:
+                    command: >-
+                      echo "Copying folder..."
+
+                      cp -R <+pipeline.workspace>/pcor_functions/data
+                      <+pipeline.workspace>/pcor_functions
+                when:
+                  stageStatus: ''
+                  condition: ''
+              - step:
+                  name: Publish pcor_functions artifact
+                  identifier: Publish_pcor_functions_artifact
+                  type: Run
+                  spec:
+                    command: '#Manually add a command'
+                when:
+                  stageStatus: ''
+                  condition: ''
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
