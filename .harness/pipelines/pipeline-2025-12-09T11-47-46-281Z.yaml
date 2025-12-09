@@ -1,0 +1,42 @@
+pipeline:
+  name: pcor_function___pipeline_properties_ci_codebase_build_spec_bran
+  identifier: pcor_function___pipeline_properties_ci_codebase_build_spec_bran
+  projectIdentifier: NodeJs
+  orgIdentifier: default
+  tags: {}
+  variables:
+    - value: ''
+      type: String
+  stages:
+    - stage:
+        name: SEMANTIC_VERSIONING
+        identifier: SEMANTIC_VERSIONING
+        type: CI
+        spec:
+          execution:
+            steps:
+              - name: Unnamed Task
+                scripts:
+                  - ''
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+    - stage:
+        name: pcor_fuctions_Build
+        identifier: pcor_fuctions_Build
+        type: CI
+        spec:
+          execution:
+            steps:
+              - name: Unnamed Task
+                scripts:
+                  - ''
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
