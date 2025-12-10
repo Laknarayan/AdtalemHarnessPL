@@ -1,0 +1,66 @@
+pipeline:
+  name: sis_cu2_ado426061_failed_ae_apcd_code_creation_fix_____build_bu
+  identifier: sis_cu2_ado426061_failed_ae_apcd_code_creation_fix_____build_bu
+  projectIdentifier: NodeJs
+  orgIdentifier: default
+  tags: {}
+  variables: []
+  inputSet:
+    name: ADO_Parameters_Input
+    identifier: ado_parameters_input
+    orgIdentifier: default
+    projectIdentifier: default_project
+    pipeline:
+      identifier: sis_cu2_ado426061_failed_ae_apcd_code_creation_fix_____build_bu
+      variables:
+        - name: GITHUB_REPO
+          type: String
+          description: GitHub Repo
+          required: false
+          value: <+input>
+          allowedValues: >-
+            --SELECT A
+            REPO--,BANNER_CU_BCH,BANNER_RUSM_RUSVM_BCH,BANNER_AUC_BCH,BANNER_ADHOC,BANNER_WU_BCH
+        - name: BRANCH_NAME
+          type: String
+          description: Branch Name
+          required: false
+          value: <+input>
+        - name: FROM_HASH
+          type: String
+          description: From Hash
+          required: false
+          value: <+input>
+        - name: TO_HASH
+          type: String
+          description: To Hash
+          required: false
+          value: <+input>
+  stages:
+    - stage:
+        name: __default
+        identifier: __default
+        type: CI
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: bash_3
+                  identifier: Bash_3
+                  type: Run
+                  spec:
+                    shell: Bash
+                    command: '#Manually add a command'
+              - step:
+                  name: publish_banner_artifact_to_pipeline
+                  identifier: Publish_Banner_Artifact_to_Pipeline
+                  type: Run
+                  spec:
+                    shell: Bash
+                    command: '#Manually add a command'
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
