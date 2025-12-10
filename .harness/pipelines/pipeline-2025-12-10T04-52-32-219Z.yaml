@@ -1,0 +1,35 @@
+pipeline:
+  name: sis_cu2_ado426061_failed_ae_apcd_code_creation_fix_____build_bu
+  identifier: sis_cu2_ado426061_failed_ae_apcd_code_creation_fix_____build_bu
+  projectIdentifier: NodeJs
+  orgIdentifier: default
+  tags: {}
+  variables: {}
+  stages:
+    - stage:
+        name: __default
+        identifier: __default
+        type: CI
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: Bash@3
+                  identifier: Bash_3
+                  type: Run
+                  spec:
+                    shell: Bash
+                    command: '#Manually add a command'
+              - step:
+                  name: Publish Banner Artifact to Pipeline
+                  identifier: Publish_Banner_Artifact_to_Pipeline
+                  type: Run
+                  spec:
+                    shell: Bash
+                    command: '#Manually add a command'
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
