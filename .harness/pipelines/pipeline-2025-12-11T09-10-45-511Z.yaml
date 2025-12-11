@@ -1,0 +1,27 @@
+template:
+  name: ${{parameters.BRANCH_NAME}} - $(Build.BuildId) - ${{parameters.GITHUB_REPO}}
+  identifier: ${{parameters.BRANCH_NAME}}_-_$(Build.BuildId)_-_${{parameters.GITHUB_REPO}}
+  versionLabel: v1.0
+  type: stepGroup
+  projectIdentifier: NodeJs
+  orgIdentifier: default
+  tags: {}
+  spec:
+    stageType: CI
+    steps:
+      - step:
+          type: Run
+          name: Step_1
+          identifier: Step_1
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
+      - step:
+          type: Run
+          name: Publish Banner Artifact to Pipeline
+          identifier: Publish_Banner_Artifact_to_Pipeline
+          spec:
+            connectorRef: ''
+            image: ''
+            shell: Sh
