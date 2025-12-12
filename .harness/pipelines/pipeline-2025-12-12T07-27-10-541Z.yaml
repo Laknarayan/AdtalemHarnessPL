@@ -1,0 +1,63 @@
+pipeline:
+  name: sis_cu2_ado426061_failed_ae_apcd_code_creation_fix_____build_bu
+  identifier: sis_cu2_ado426061_failed_ae_apcd_code_creation_fix_____build_bu
+  projectIdentifier: NodeJs
+  orgIdentifier: default
+  tags: {}
+  variables:
+    - name: GITHUB_REPO
+      type: String
+      description: GitHub Repo
+      required: false
+      value: >-
+        <+input>.default("--SELECT A REPO--").allowedValues("--SELECT A
+        REPO--","BANNER_CU_BCH","BANNER_RUSM_RUSVM_BCH","BANNER_AUC_BCH","BANNER_ADHOC","BANNER_WU_BCH")
+    - name: BRANCH_NAME
+      type: String
+      description: Branch Name
+      required: false
+      value: <+input>.default("--ENTER BRANCH NAME--")
+    - name: FROM_HASH
+      type: String
+      description: From Hash
+      required: false
+      value: <+input>.default("--FROM HASH--")
+    - name: TO_HASH
+      type: String
+      description: To Hash
+      required: true
+      value: <+input>
+  stages:
+    - stage:
+        name: __default
+        identifier: __default
+        type: CI
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: bash_3
+                  identifier: Bash_3
+                  type: Run
+                  spec:
+                    shell: Bash
+                    command: >-
+                      #Replace with Harness Command
+
+
+                      scripts/get-source-code.sh  BANNER_CU_BCH
+                      SIS_CU2_ADO426061_FAILED_AE_APCD_CODE_CREATION_FIX
+                      c155a89d dd969999 $(GITHUB_USER) $(GITHUB_TOKEN)
+              - step:
+                  name: publish_banner_artifact_to_pipeline
+                  identifier: Publish_Banner_Artifact_to_Pipeline
+                  type: Run
+                  spec:
+                    shell: Bash
+                    command: '#Manually add a command'
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
